@@ -1,4 +1,8 @@
 defmodule RedlineWeb.Schema do
+  @moduledoc """
+  GraphQL query type definitions
+  """
+
   use Absinthe.Schema
   import_types(RedlineWeb.Schema.ContentTypes)
 

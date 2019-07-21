@@ -2,7 +2,7 @@ defmodule Redline.MapTest do
   use Redline.DataCase
   import Redline.Factory
   import Redline.TestSupport
-  alias Redline.{Result, Map}
+  alias Redline.{Map, Result}
   alias Map.{Junction, Region, Trail}
 
   describe "junctions" do
@@ -88,7 +88,8 @@ defmodule Redline.MapTest do
       attrs = %{name: "Trail Name"}
 
       {:ok, trail} =
-        Map.create_trail(attrs)
+        attrs
+        |> Map.create_trail()
         |> Result.map(&Repo.preload(&1, :trail_segments))
 
       assert trail ==
@@ -115,7 +116,8 @@ defmodule Redline.MapTest do
       attrs = %{name: "Trail Name"}
 
       {:ok, trail} =
-        Map.create_trail(attrs, [segment_1, segment_2])
+        attrs
+        |> Map.create_trail([segment_1, segment_2])
         |> Result.map(&Repo.preload(&1, :trail_segments))
 
       expected_segment_ids = [segment_1.id, segment_2.id]

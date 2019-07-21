@@ -1,4 +1,8 @@
 defmodule Redline.Map.TrailSegment do
+  @moduledoc """
+  Mode; definition for TrailSegment
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -29,5 +33,5 @@ defmodule Redline.Map.TrailSegment do
     |> validate_required([:trail_id])
   end
 
-  defp required_attrs(), do: [:start_id, :end_id, :order]
+  defp required_attrs, do: [:start_id, :end_id, :order]
 end

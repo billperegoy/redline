@@ -1,4 +1,8 @@
 defmodule Redline.Factory do
+  @moduledoc """
+  Test factories for `Redline`
+  """
+
   use ExMachina.Ecto, repo: Redline.Repo
 
   alias Redline.Map

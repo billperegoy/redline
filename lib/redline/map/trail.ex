@@ -1,4 +1,8 @@
 defmodule Redline.Map.Trail do
+  @moduledoc """
+  Model definition for Trail
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -21,6 +25,6 @@ defmodule Redline.Map.Trail do
     |> validate_required(required_attrs())
   end
 
-  def required_attrs(), do: [:name]
-  def optional_attrs(), do: [:region_id]
+  def required_attrs, do: [:name]
+  def optional_attrs, do: [:region_id]
 end

@@ -1,4 +1,8 @@
 defmodule Redline.Map.Junction do
+  @moduledoc """
+  Model definition for Junction
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -19,6 +23,6 @@ defmodule Redline.Map.Junction do
     |> validate_required(required_attrs())
   end
 
-  defp required_attrs(), do: [:name]
-  defp optional_attrs(), do: [:latitude, :longitude]
+  defp required_attrs, do: [:name]
+  defp optional_attrs, do: [:latitude, :longitude]
 end

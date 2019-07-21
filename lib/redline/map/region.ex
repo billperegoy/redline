@@ -1,4 +1,8 @@
 defmodule Redline.Map.Region do
+  @moduledoc """
+  Model definoition for Region.
+  """
+
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -20,5 +24,5 @@ defmodule Redline.Map.Region do
     |> validate_required(required_attrs())
   end
 
-  def required_attrs(), do: [:name]
+  def required_attrs, do: [:name]
 end

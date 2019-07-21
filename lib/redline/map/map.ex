@@ -1,4 +1,8 @@
 defmodule Redline.Map do
+  @moduledoc """
+  Context functions for `Map` context.
+  """
+
   import Ecto.Query, warn: false
   alias Redline.Map.{Junction, Region, Trail, TrailSegment}
   alias Redline.Repo
@@ -9,7 +13,8 @@ defmodule Redline.Map do
     |> Repo.insert()
   end
 
-  def list_trail_segments() do
+  def list_trail_segments do
+    # credo:disable-for-lines:2  Credo.Check.Refactor.PipeChainStart
     from(segment in TrailSegment, order_by: segment.order)
     |> Repo.all()
   end
@@ -47,12 +52,14 @@ defmodule Redline.Map do
     end
   end
 
-  def list_trails() do
+  def list_trails do
+    # credo:disable-for-lines:2  Credo.Check.Refactor.PipeChainStart
     from(trail in Trail, order_by: trail.name)
     |> Repo.all()
   end
 
-  def list_regions() do
+  def list_regions do
+    # credo:disable-for-lines:2  Credo.Check.Refactor.PipeChainStart
     from(region in Region, order_by: region.name)
     |> Repo.all()
   end

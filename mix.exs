@@ -20,7 +20,6 @@ defmodule Redline.MixProject do
   def application do
     [
       mod: {Redline.Application, []},
-      applications: [:ex_machina],
       extra_applications: [:logger, :runtime_tools]
     ]
   end

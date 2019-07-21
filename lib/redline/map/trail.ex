@@ -21,7 +21,7 @@ defmodule Redline.Map.Trail do
   @doc false
   def changeset(trail, attrs) do
     trail
-    |> cast(attrs, required_attrs() ++ optional_attrs)
+    |> cast(attrs, required_attrs() ++ optional_attrs())
     |> validate_required(required_attrs())
   end
 

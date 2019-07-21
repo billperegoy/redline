@@ -1,7 +1,7 @@
 defmodule Redline.TestSupport do
   @moduledoc """
   Test utility functions.
-  ?"""
+  """
 
   def with_metadata(expected, actual) do
     %{

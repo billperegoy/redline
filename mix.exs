@@ -20,6 +20,7 @@ defmodule Redline.MixProject do
   def application do
     [
       mod: {Redline.Application, []},
+      applications: [:ex_machina],
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -40,7 +41,8 @@ defmodule Redline.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:ex_machina, "~> 2.3", only: :test}
     ]
   end
 
